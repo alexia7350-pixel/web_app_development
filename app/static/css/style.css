@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #ff6b6b;
+    --primary-hover: #fa5252;
+    --primary-light: #ffe3e3;
+    --bg-color: #f8f9fa;
+    --text-color: #2b2b3a;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(at 0% 0%, hsla(353,100%,88%,0.3) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsla(38,100%,86%,0.2) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-color);
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+/* 導覽列美化 */
+.custom-nav {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+.nav-link {
+    color: #4b4b5a !important;
+    transition: color 0.2s ease;
+}
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* 按鈕美化 */
+.text-primary { color: var(--primary-color) !important; }
+.btn-primary.btn-custom { 
+    background-color: var(--primary-color); 
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.25);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.btn-primary.btn-custom:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.35);
+}
+
+.btn-outline-primary.btn-outline-custom {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-width: 2px;
+}
+.btn-outline-primary.btn-outline-custom:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.main-content {
+    padding: 2rem 0;
+}
+
+/* Glassmorphism 卡片效果 */
+.glass-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.7);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 登入註冊表單的美化 */
+.form-control {
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e1e4e8;
+    background-color: #fafbfc;
+    transition: all 0.2s ease;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 4px var(--primary-light);
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+}
+.form-label {
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.alert {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+}
+.alert-success {
+    border-left: 4px solid #40c057;
+    color: #2b8a3e;
+}
+.alert-danger {
+    border-left: 4px solid #fa5252;
+    color: #c92a2a;
+}

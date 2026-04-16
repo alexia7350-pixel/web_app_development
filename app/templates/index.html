@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row align-items-center" style="min-height: 80vh;">
+    <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
+        <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold mb-3 shadow-sm" style="font-size: 0.9rem;">
+            <i class="bi bi-stars"></i> 為料理找點新靈感
+        </span>
+        <h1 class="display-3 fw-bold mb-4 position-relative" style="letter-spacing: -1px; line-height: 1.2;">
+            今天想吃什麼？<br>
+            <span class="text-primary position-relative d-inline-block">
+                其實不需要煩惱。
+                <svg class="position-absolute w-100" style="bottom: -5px; left: 0; z-index: -1;" viewBox="0 0 100 20" preserveAspectRatio="none">
+                    <path d="M0,15 C30,0 70,0 100,15" stroke="#ffe3e3" stroke-width="6" fill="none"/>
+                </svg>
+            </span>
+        </h1>
+        <p class="lead text-secondary fw-medium mb-5 ps-lg-1" style="font-size: 1.2rem;">
+            在 RecipeHub 收藏你看過最棒的食譜。或是告訴我們你冰箱裡還剩下哪些食材，讓我們為你施展尋找下一頓美味的魔法！
+        </p>
+        
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <a href="{{ url_for('search.by_ingredients') }}" class="btn btn-primary btn-custom btn-lg rounded-pill px-4 fw-bold">
+                <i class="bi bi-search me-2"></i> 從食材找靈感
+            </a>
+            <a href="{{ url_for('main.list_recipes') }}" class="btn btn-light border btn-lg rounded-pill px-4 shadow-sm fw-bold text-dark">
+                探索食譜牆
+            </a>
+        </div>
+    </div>
+    
+    <!-- 右側視覺區塊 -->
+    <div class="col-lg-6 position-relative text-center">
+        <!-- 裝飾用背景圖形 -->
+        <div class="position-absolute bg-warning rounded-circle opacity-25 translate-middle p-5" style="width: 300px; height: 300px; top: 50%; left: 50%; filter: blur(50px); z-index: 0;"></div>
+        
+        <div class="glass-card shadow-lg mx-auto position-relative" style="max-width: 480px; z-index: 1;">
+            <div class="d-flex flex-column gap-3">
+                <div class="bg-light p-3 rounded-4 shadow-sm d-flex align-items-center text-start hover-float transition-all">
+                    <div class="bg-white rounded p-2 shadow-sm me-3"><i class="bi bi-egg text-warning fs-3"></i></div>
+                    <div>
+                        <h6 class="mb-1 fw-bold">雞蛋 2 顆</h6>
+                        <small class="text-muted">已加入搜尋條件</small>
+                    </div>
+                </div>
+                <div class="bg-light p-3 rounded-4 shadow-sm d-flex align-items-center text-start">
+                    <div class="bg-white rounded p-2 shadow-sm me-3"><i class="bi bi-flower1 text-success fs-3"></i></div>
+                    <div>
+                        <h6 class="mb-1 fw-bold">高麗菜 半顆</h6>
+                        <small class="text-muted">已加入搜尋條件</small>
+                    </div>
+                </div>
+                <div class="mt-2 text-start">
+                    <button class="btn btn-dark w-100 rounded-pill py-2 shadow-sm fw-bold">
+                        <i class="bi bi-magic me-2 text-warning"></i> 開始搜尋食譜
+                    </button>
+                    <p class="text-center text-muted small mt-3 mb-0">為您找到 14 篇符合的絕妙料理</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
